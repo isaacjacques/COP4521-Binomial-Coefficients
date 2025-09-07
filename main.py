@@ -18,7 +18,7 @@ from concurrent.futures import ThreadPoolExecutor
 
 def _worker(n_k: tuple[int, int]) -> tuple[str, int]:
     n, k = n_k
-    value = math.comb(n, k)
+    value = math.comb(n, k) # calculates binomial coefficient
     return (threading.current_thread().name, value)
 
 def compute(n: int, max_workers: int = 3):
